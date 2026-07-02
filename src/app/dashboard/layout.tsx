@@ -1,11 +1,20 @@
 import SideNav from "@/app/ui/dashboard/sidenav";
+import internal from "stream";
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+};
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   console.log("log - >>>> DASHBOARD LAYOUT");
+
+  const aaa = { a: "aaa", b: "bbb" };
+  console.log(...Object.values(aaa));
   return (
     <div className="flex h-screen flex-col md:flex-row md:overflow-hidden">
       <div className="w-full flex-none md:w-64">
-        <h2 className="bg-green-100">DASHBOARD LAYOUT</h2>
         <SideNav />
       </div>
       <div className="grow p-6 md:overflow-y-auto md:p-12">{children}</div>
